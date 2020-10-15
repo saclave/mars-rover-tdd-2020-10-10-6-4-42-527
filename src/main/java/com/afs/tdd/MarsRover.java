@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
 
     private int posX;
@@ -12,14 +14,19 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void moveMarsRover(String movement) {
-        if(movement.equals("M")){
+    public void moveMarsRover(String movements) {
+        Arrays.asList(movements.split(""))
+                .forEach(move -> this.sortRoverMovement(move));
+    }
+
+    public void sortRoverMovement(String move) {
+        if(move.equals("M")){
             moveFoward();
         }
-        if(movement.equals("L")){
+        else if(move.equals("L")){
             turnLeft();
         }
-        if(movement.equals("R")){
+        else if(move.equals("R")){
             turnRight();
         }
     }
