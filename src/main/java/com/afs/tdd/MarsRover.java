@@ -16,6 +16,7 @@ public class MarsRover {
         if(movement.equals("M")){
             moveFoward();
         }
+        if(movement.equals())
     }
 
     private void moveFoward() {
