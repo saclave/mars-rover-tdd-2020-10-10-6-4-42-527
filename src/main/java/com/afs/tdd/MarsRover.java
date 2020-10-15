@@ -19,6 +19,9 @@ public class MarsRover {
         if(movement.equals("L")){
             turnLeft();
         }
+        if(movement.equals("R")){
+            turnRight();
+        }
     }
 
     private void turnLeft() {

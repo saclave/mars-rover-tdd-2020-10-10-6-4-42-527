@@ -29,4 +29,16 @@ class DemoTest {
         assertEquals(0, marsRover.getYPosition());
         assertEquals("W", marsRover.getDirection());
     }
+
+    @Test
+    void test_when_x0_y0_heading_N_with_command_R(){
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        //when
+        marsRover.moveMarsRover("R");
+        //then
+        assertEquals(0, marsRover.getXPosition());
+        assertEquals(0, marsRover.getYPosition());
+        assertEquals("E", marsRover.getDirection());
+    }
 }
