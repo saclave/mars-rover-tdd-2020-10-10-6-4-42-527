@@ -28,6 +28,8 @@ public class MarsRover {
         }
         else if(move.equals("R")){
             turnRight();
+        }else{
+            //throw new CommandNotDefinedException("Invalid movement");
         }
     }
 
