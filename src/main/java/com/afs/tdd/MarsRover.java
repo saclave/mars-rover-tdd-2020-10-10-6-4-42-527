@@ -49,6 +49,7 @@ public class MarsRover {
         if(direction.equals("S")){
             posY -= 1;
         }
+        
     }
 
     public int getXPosition() {
