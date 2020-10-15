@@ -28,7 +28,7 @@ public class MarsRover {
         if(direction.equals("N")){
             direction = "E";
         }
-        if(direction.equals("S")){
+        else if(direction.equals("S")){
             direction = "W";
         }
     }
@@ -37,8 +37,11 @@ public class MarsRover {
         if(direction.equals("N")){
             direction = "W";
         }
-        if(direction.equals("S")){
+        else if(direction.equals("S")){
             direction = "E";
+        }
+        else if(direction.equals("E")){
+            direction = "N";
         }
     }
 
@@ -46,10 +49,10 @@ public class MarsRover {
         if(direction.equals("N")){
             posY += 1;
         }
-        if(direction.equals("S")){
+        else if(direction.equals("S")){
             posY -= 1;
         }
-        if(direction.equals("M")){
+        else if(direction.equals("M")){
             posX += 1;
         }
     }
