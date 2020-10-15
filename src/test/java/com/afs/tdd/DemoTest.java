@@ -86,7 +86,7 @@ class DemoTest {
         //when
         marsRover.moveMarsRover("M");
         //then
-        assertEquals(0, marsRover.getXPosition());
+        assertEquals(1, marsRover.getXPosition());
         assertEquals(0, marsRover.getYPosition());
         assertEquals("E", marsRover.getDirection());
     }
@@ -122,8 +122,8 @@ class DemoTest {
         //when
         marsRover.moveMarsRover("M");
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(-1, marsRover.getYPosition());
+        assertEquals(-1, marsRover.getXPosition());
+        assertEquals(0, marsRover.getYPosition());
         assertEquals("W", marsRover.getDirection());
     }
 }

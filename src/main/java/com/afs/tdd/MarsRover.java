@@ -55,8 +55,11 @@ public class MarsRover {
         else if(direction.equals("S")){
             posY -= 1;
         }
-        else if(direction.equals("M")){
+        else if(direction.equals("E")){
             posX += 1;
+        }
+        else if(direction.equals("W")){
+            posX -= 1;
         }
     }
 
