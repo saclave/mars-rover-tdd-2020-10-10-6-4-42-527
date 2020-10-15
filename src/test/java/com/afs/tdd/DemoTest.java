@@ -60,10 +60,22 @@ class DemoTest {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "S");
         //when
-        marsRover.moveMarsRover("M");
+        marsRover.moveMarsRover("L");
         //then
         assertEquals(0, marsRover.getXPosition());
         assertEquals(0, marsRover.getYPosition());
         assertEquals("E", marsRover.getDirection());
+    }
+
+    @Test
+    void test_when_x0_y0_heading_S_with_command_R(){
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "S");
+        //when
+        marsRover.moveMarsRover("R");
+        //then
+        assertEquals(0, marsRover.getXPosition());
+        assertEquals(0, marsRover.getYPosition());
+        assertEquals("W", marsRover.getDirection());
     }
 }
