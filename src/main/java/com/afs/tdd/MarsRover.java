@@ -2,6 +2,8 @@ package com.afs.tdd;
 
 import java.util.Arrays;
 
+import static com.afs.tdd.Constants.*;
+
 public class MarsRover {
 
     private int posX;
@@ -26,61 +28,39 @@ public class MarsRover {
     }
 
     public void sortRoverMovement(String move) throws CommandNotDefinedException {
-        if(move.equals("M")){
-            moveFoward();
-        }
-        else if(move.equals("L")){
-            turnLeft();
-        }
-        else if(move.equals("R")){
-            turnRight();
-        }else{
-            throw new CommandNotDefinedException("Invalid movement");
+        switch(move){
+            case MOVE: moveFoward(); break;
+            case LEFT: turnLeft(); break;
+            case RIGHT: turnRight(); break;
+            default:
+                throw new CommandNotDefinedException("Invalid movement");
         }
     }
 
     private void turnRight() {
-        if(direction.equals("N")){
-            direction = "E";
-        }
-        else if(direction.equals("S")){
-            direction = "W";
-        }
-        else if(direction.equals("E")){
-            direction = "S";
-        }
-        else if(direction.equals("W")){
-            direction = "N";
+        switch(direction){
+            case NORTH: direction = EAST; break;
+            case SOUTH: direction = WEST; break;
+            case EAST: direction = SOUTH; break;
+            case WEST: direction = NORTH; break;
         }
     }
 
     private void turnLeft() {
-        if(direction.equals("N")){
-            direction = "W";
-        }
-        else if(direction.equals("S")){
-            direction = "E";
-        }
-        else if(direction.equals("E")){
-            direction = "N";
-        }
-        else if(direction.equals("W")){
-            direction = "S";
+        switch(direction){
+            case NORTH: direction = WEST; break;
+            case SOUTH: direction = EAST; break;
+            case EAST: direction = NORTH; break;
+            case WEST: direction = SOUTH; break;
         }
     }
 
     private void moveFoward() {
-        if(direction.equals("N")){
-            posY += 1;
-        }
-        else if(direction.equals("S")){
-            posY -= 1;
-        }
-        else if(direction.equals("E")){
-            posX += 1;
-        }
-        else if(direction.equals("W")){
-            posX -= 1;
+        switch(direction){
+            case NORTH: posY += 1; break;
+            case SOUTH: posY -= 1; break;
+            case EAST: posX += 1; break;
+            case WEST: posX -= 1; break;
         }
     }
 
