@@ -16,7 +16,15 @@ public class MarsRover {
         if(movement.equals("M")){
             moveFoward();
         }
-        if(movement.equals())
+        if(movement.equals("L")){
+            turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        if(direction.equals("N")){
+            direction = "W";
+        }
     }
 
     private void moveFoward() {
