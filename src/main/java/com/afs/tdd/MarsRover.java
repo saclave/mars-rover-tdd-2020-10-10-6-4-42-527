@@ -16,10 +16,16 @@ public class MarsRover {
 
     public void moveMarsRover(String movements) {
         Arrays.asList(movements.split(""))
-                .forEach(move -> this.sortRoverMovement(move));
+                .forEach(move -> {
+                    try {
+                        this.sortRoverMovement(move);
+                    } catch (CommandNotDefinedException e) {
+                        e.printStackTrace();
+                    }
+                });
     }
 
-    public void sortRoverMovement(String move) {
+    public void sortRoverMovement(String move) throws CommandNotDefinedException {
         if(move.equals("M")){
             moveFoward();
         }
@@ -29,7 +35,7 @@ public class MarsRover {
         else if(move.equals("R")){
             turnRight();
         }else{
-            //throw new CommandNotDefinedException("Invalid movement");
+            throw new CommandNotDefinedException("Invalid movement");
         }
     }
 

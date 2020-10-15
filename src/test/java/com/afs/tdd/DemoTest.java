@@ -1,11 +1,13 @@
 package com.afs.tdd;
 
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class DemoTest {
 
+public class DemoTest {
     @Test
     void test_when_x0_y0_heading_N_with_command_M() {
         //given
@@ -162,4 +164,18 @@ class DemoTest {
         assertEquals(1, marsRover.getYPosition());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void test_when_x0_y0_heading_N_with_invalid_commands() {
+        //then
+        assertThrows(CommandNotDefinedException.class, () -> {
+            //given
+            MarsRover marsRover = new MarsRover(0, 0, "N");
+            //when
+            marsRover.sortRoverMovement("F");
+        });
+    }
 }
+
+
+
