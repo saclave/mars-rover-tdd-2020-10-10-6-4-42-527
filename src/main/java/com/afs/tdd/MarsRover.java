@@ -6,7 +6,7 @@ import static com.afs.tdd.Constants.*;
 
 
 public class MarsRover {
-
+    
     private int posX;
     private int posY;
     private String direction;
@@ -30,7 +30,7 @@ public class MarsRover {
 
     void sortRoverMovement(String move) throws CommandNotDefinedException {
         switch(move){
-            case MOVE: moveFoward(); break;
+            case MOVE: moveForward(); break;
             case LEFT: turnLeft(); break;
             case RIGHT: turnRight(); break;
             default:
@@ -44,7 +44,7 @@ public class MarsRover {
             case SOUTH: direction = WEST; break;
             case EAST: direction = SOUTH; break;
             case WEST: direction = NORTH; break;
-            default: direction = null;
+            default: break;
         }
     }
 
@@ -54,17 +54,17 @@ public class MarsRover {
             case SOUTH: direction = EAST; break;
             case EAST: direction = NORTH; break;
             case WEST: direction = SOUTH; break;
-            default: direction = null;
+            default: break;
         }
     }
 
-    private void moveFoward() {
+    private void moveForward() {
         switch(direction){
             case NORTH: posY += 1; break;
             case SOUTH: posY -= 1; break;
             case EAST: posX += 1; break;
             case WEST: posX -= 1; break;
-            default: direction = null;
+            default: break;
         }
     }
 
@@ -80,3 +80,5 @@ public class MarsRover {
         return direction;
     }
 }
+
+
