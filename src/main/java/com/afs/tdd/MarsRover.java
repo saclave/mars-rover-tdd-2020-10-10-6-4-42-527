@@ -6,7 +6,7 @@ import static com.afs.tdd.Constants.*;
 
 
 public class MarsRover {
-    
+
     private int posX;
     private int posY;
     private String direction;
@@ -21,14 +21,14 @@ public class MarsRover {
         Arrays.asList(movements.split(""))
                 .forEach(move -> {
                     try {
-                        this.sortRoverMovement(move);
+                        this.getRoverMovement(move);
                     } catch (CommandNotDefinedException e) {
                         e.printStackTrace();
                     }
                 });
     }
 
-    void sortRoverMovement(String move) throws CommandNotDefinedException {
+    void getRoverMovement(String move) throws CommandNotDefinedException {
         switch(move){
             case MOVE: moveForward(); break;
             case LEFT: turnLeft(); break;
