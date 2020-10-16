@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class DemoTest {
+class MarsRoverTest {
     @Test
     void test_when_x0_y0_heading_N_with_command_M() {
         //given

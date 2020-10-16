@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import static com.afs.tdd.Constants.*;
 
+
 public class MarsRover {
 
     private int posX;
@@ -27,7 +28,7 @@ public class MarsRover {
                 });
     }
 
-    public void sortRoverMovement(String move) throws CommandNotDefinedException {
+    void sortRoverMovement(String move) throws CommandNotDefinedException {
         switch(move){
             case MOVE: moveFoward(); break;
             case LEFT: turnLeft(); break;
