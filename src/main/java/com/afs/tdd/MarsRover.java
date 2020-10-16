@@ -43,6 +43,7 @@ public class MarsRover {
             case SOUTH: direction = WEST; break;
             case EAST: direction = SOUTH; break;
             case WEST: direction = NORTH; break;
+            default: direction = null;
         }
     }
 
@@ -52,6 +53,7 @@ public class MarsRover {
             case SOUTH: direction = EAST; break;
             case EAST: direction = NORTH; break;
             case WEST: direction = SOUTH; break;
+            default: direction = null;
         }
     }
 
@@ -61,6 +63,7 @@ public class MarsRover {
             case SOUTH: posY -= 1; break;
             case EAST: posX += 1; break;
             case WEST: posX -= 1; break;
+            default: direction = null;
         }
     }
 
