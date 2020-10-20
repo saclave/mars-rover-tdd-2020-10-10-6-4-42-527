@@ -3,19 +3,19 @@ package com.afs.tdd;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoverControl {
+class RoverControl {
 
     private List<Command> commands;
 
-    public RoverControl() {
+    RoverControl() {
         commands = new ArrayList<>();
     }
 
-    public void run() {
+    void run() {
         commands.forEach(Command::execute);
     }
 
-    public void record(Command command) {
+    void record(Command command) {
         commands.add(command);
     }
 }

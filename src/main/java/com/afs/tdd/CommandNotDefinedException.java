@@ -2,7 +2,7 @@ package com.afs.tdd;
 
 public class CommandNotDefinedException extends RuntimeException {
 
-    public CommandNotDefinedException (String message){
+    CommandNotDefinedException(String message){
         super(message);
     }
 }

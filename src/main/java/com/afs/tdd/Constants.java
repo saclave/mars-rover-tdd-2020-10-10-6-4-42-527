@@ -1,10 +1,10 @@
 package com.afs.tdd;
 
-public class Constants {
+class Constants {
 
     private Constants(){ }
 
-    public static final String MOVE = "M";
-    public static final String LEFT = "L";
-    public static final String RIGHT = "R";
+    static final String MOVE = "M";
+    static final String LEFT = "L";
+    static final String RIGHT = "R";
 }
