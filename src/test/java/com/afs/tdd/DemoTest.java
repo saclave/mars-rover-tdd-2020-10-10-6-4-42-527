@@ -3,177 +3,167 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class DemoTest {
+    private MarsRover marsRover;
+    private CommandReceiver commandReceiver;
+
     @Test
     void test_when_x0_y0_heading_N_with_command_M() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
+        marsRover = new MarsRover(0, 0, Direction.N);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("M");
+        commandReceiver.moveMarsRover("M");
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(1, marsRover.getYPosition());
-        assertEquals("N", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 1, Direction.N), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_N_with_command_L(){
+    void test_when_x0_y0_heading_N_with_command_L() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
+        marsRover = new MarsRover(0, 0, Direction.N);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("L");
+        commandReceiver.moveMarsRover("L");
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("W", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.W), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_N_with_command_R(){
+    void test_when_x0_y0_heading_N_with_command_R() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
+        marsRover = new MarsRover(0, 0, Direction.N);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("R");
+        commandReceiver.moveMarsRover("R");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("E", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.E), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_S_with_command_M(){
+    void test_when_x0_y0_heading_S_with_command_M() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
+        marsRover = new MarsRover(0, 0, Direction.S);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("M");
+        commandReceiver.moveMarsRover("M");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(-1, marsRover.getYPosition());
-        assertEquals("S", marsRover.getDirection());
+        assertEquals(new MarsRover(0, -1, Direction.S), marsRover);
+
     }
 
-
     @Test
-    void test_when_x0_y0_heading_S_with_command_L(){
+    void test_when_x0_y0_heading_S_with_command_L() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
+        marsRover = new MarsRover(0, 0, Direction.S);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("L");
+        commandReceiver.moveMarsRover("L");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("E", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.E), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_S_with_command_R(){
+    void test_when_x0_y0_heading_S_with_command_R() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
+        marsRover = new MarsRover(0, 0, Direction.S);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("R");
+        commandReceiver.moveMarsRover("R");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("W", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.W), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_E_with_command_M(){
+    void test_when_x0_y0_heading_E_with_command_M() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
+        marsRover = new MarsRover(0, 0, Direction.E);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("M");
+        commandReceiver.moveMarsRover("M");
+
         //then
-        assertEquals(1, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("E", marsRover.getDirection());
+        assertEquals(new MarsRover(1, 0, Direction.E), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_E_with_command_L(){
+    void test_when_x0_y0_heading_E_with_command_L() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
+        marsRover = new MarsRover(0, 0, Direction.E);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("L");
+        commandReceiver.moveMarsRover("L");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("N", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.N), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_E_with_command_R(){
+    void test_when_x0_y0_heading_E_with_command_R() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
+        marsRover = new MarsRover(0, 0, Direction.E);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("R");
+        commandReceiver.moveMarsRover("R");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("S", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.S), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_W_with_command_M(){
+    void test_when_x0_y0_heading_W_with_command_M() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
+        marsRover = new MarsRover(0, 0, Direction.W);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("M");
+        commandReceiver.moveMarsRover("M");
+
         //then
-        assertEquals(-1, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("W", marsRover.getDirection());
+        assertEquals(new MarsRover(-1, 0, Direction.W), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_W_with_command_L(){
+    void test_when_x0_y0_heading_W_with_command_L() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
+        marsRover = new MarsRover(0, 0, Direction.W);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("L");
+        commandReceiver.moveMarsRover("L");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("S", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.S), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_W_with_command_R(){
+    void test_when_x0_y0_heading_W_with_command_R() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
+        marsRover = new MarsRover(0, 0, Direction.W);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("R");
+        commandReceiver.moveMarsRover("R");
+
         //then
-        assertEquals(0, marsRover.getXPosition());
-        assertEquals(0, marsRover.getYPosition());
-        assertEquals("N", marsRover.getDirection());
+        assertEquals(new MarsRover(0, 0, Direction.N), marsRover);
     }
 
     @Test
-    void test_when_x0_y0_heading_N_with_multiple_commands(){
+    void test_when_x0_y0_heading_N_with_multiple_commands() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
+        marsRover = new MarsRover(0, 0, Direction.N);
+        commandReceiver = new CommandReceiver(marsRover);
         //when
-        marsRover.moveMarsRover("MLMR");
-        //then
-        assertEquals(-1, marsRover.getXPosition());
-        assertEquals(1, marsRover.getYPosition());
-        assertEquals("N", marsRover.getDirection());
-    }
+        commandReceiver.moveMarsRover("MLMR");
 
-    @Test
-    void test_when_x0_y0_heading_N_with_invalid_commands() {
         //then
-        assertThrows(CommandNotDefinedException.class, () -> {
-            //given
-            MarsRover marsRover = new MarsRover(0, 0, Direction.N);
-            //when
-            marsRover.sortRoverMovement("F");
-        });
+        assertEquals(new MarsRover(-1, 1, Direction.N), marsRover);
+
     }
 }
 

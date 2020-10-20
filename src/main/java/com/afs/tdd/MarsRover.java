@@ -1,8 +1,6 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
-
-import static com.afs.tdd.Constants.*;
+import java.util.Objects;
 
 public class MarsRover implements RoverMovement{
 
@@ -14,27 +12,6 @@ public class MarsRover implements RoverMovement{
         this.posX = posX;
         this.posY = posY;
         this.direction = direction;
-    }
-
-    public void moveMarsRover(String movements) {
-        Arrays.asList(movements.split(""))
-                .forEach(move -> {
-                    try {
-                        this.sortRoverMovement(move);
-                    } catch (CommandNotDefinedException e) {
-                        e.printStackTrace();
-                    }
-                });
-    }
-
-    public void sortRoverMovement(String move) throws CommandNotDefinedException {
-        switch(move){
-            case MOVE: moveForward(); break;
-            case LEFT: turnLeft(); break;
-            case RIGHT: turnRight(); break;
-            default:
-                throw new CommandNotDefinedException("Invalid movement");
-        }
     }
 
     @Override
@@ -67,15 +44,13 @@ public class MarsRover implements RoverMovement{
         }
     }
 
-    public int getXPosition() {
-        return posX;
-    }
-
-    public int getYPosition() {
-        return posY;
-    }
-
-    public String getDirection() {
-        return String.valueOf(direction);
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final MarsRover marsRover = (MarsRover) o;
+        return direction == marsRover.direction &&
+                Objects.equals(posX, marsRover.posX) &&
+                Objects.equals(posY, marsRover.posY);
     }
 }
