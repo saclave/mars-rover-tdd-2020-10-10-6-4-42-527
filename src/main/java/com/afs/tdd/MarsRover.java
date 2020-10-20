@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 import static com.afs.tdd.Constants.*;
 
-public class MarsRover {
+public class MarsRover implements RoverMovement{
 
+    private Coordinates coordinates;
     private int posX;
     private int posY;
-    private String direction;
+    private Direction direction;
 
-    public MarsRover(int posX , int posY, String direction) {
-        this.posX = posX;
-        this.posY = posY;
+    public MarsRover(Coordinates coordinates, Direction direction) {
+        this.coordinates = coordinates;
         this.direction = direction;
     }
 
@@ -29,7 +29,7 @@ public class MarsRover {
 
     public void sortRoverMovement(String move) throws CommandNotDefinedException {
         switch(move){
-            case MOVE: moveFoward(); break;
+            case MOVE: moveForward(); break;
             case LEFT: turnLeft(); break;
             case RIGHT: turnRight(); break;
             default:
@@ -37,45 +37,33 @@ public class MarsRover {
         }
     }
 
-    private void turnRight() {
-        switch(direction){
-            case NORTH: direction = EAST; break;
-            case SOUTH: direction = WEST; break;
-            case EAST: direction = SOUTH; break;
-            case WEST: direction = NORTH; break;
-            default: direction = null;
-        }
+    @Override
+    public void turnRight() {
+        direction = direction.rotateRight();
     }
 
-    private void turnLeft() {
-        switch(direction){
-            case NORTH: direction = WEST; break;
-            case SOUTH: direction = EAST; break;
-            case EAST: direction = NORTH; break;
-            case WEST: direction = SOUTH; break;
-            default: direction = null;
-        }
+    @Override
+    public void turnLeft() {
+        direction = direction.rotateLeft();
     }
 
-    private void moveFoward() {
-        switch(direction){
-            case NORTH: posY += 1; break;
-            case SOUTH: posY -= 1; break;
-            case EAST: posX += 1; break;
-            case WEST: posX -= 1; break;
-            default: direction = null;
-        }
+    @Override
+    public void moveForward() {
+        posX = coordinates.getXPosition();
+        posY = coordinates.getYPosition();
+
+        if (direction == NORTH) coordinate = new Coordinate(x, y + 1);
+        if (direction == EAST) coordinate = new Coordinate(x + 1, y);
+        if (direction == WEST) coordinate = new Coordinate(x - 1, y);
+        if (direction == SOUTH) coordinate = new Coordinate(x, y - 1);
     }
 
-    public int getXPosition() {
-        return posX;
-    }
-
-    public int getYPosition(){
-        return posY;
-    }
-
-    public String getDirection(){
-        return direction;
-    }
 }
+
+//switch(direction){
+//        case NORTH: posY += 1; break;
+//        case SOUTH: posY -= 1; break;
+//        case EAST: posX += 1; break;
+//        case WEST: posX -= 1; break;
+//default: direction = null;
+//        }
