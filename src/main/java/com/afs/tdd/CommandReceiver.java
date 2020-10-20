@@ -20,7 +20,7 @@ public class CommandReceiver{
         roverControl.run();
     }
 
-    private void sortRoverMovement(String move) throws CommandNotDefinedException {
+    private void sortRoverMovement(String move) {
         switch(move){
             case MOVE: roverControl.record(marsRover::moveForward); break;
             case LEFT: roverControl.record(marsRover::turnLeft); break;
