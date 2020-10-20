@@ -6,13 +6,13 @@ import static com.afs.tdd.Constants.*;
 
 public class MarsRover implements RoverMovement{
 
-    private Coordinates coordinates;
     private int posX;
     private int posY;
     private Direction direction;
 
-    public MarsRover(Coordinates coordinates, Direction direction) {
-        this.coordinates = coordinates;
+    public MarsRover(int posX, int posY, Direction direction) {
+        this.posX = posX;
+        this.posY = posY;
         this.direction = direction;
     }
 
@@ -49,21 +49,33 @@ public class MarsRover implements RoverMovement{
 
     @Override
     public void moveForward() {
-        posX = coordinates.getXPosition();
-        posY = coordinates.getYPosition();
-
-        if (direction == NORTH) coordinate = new Coordinate(x, y + 1);
-        if (direction == EAST) coordinate = new Coordinate(x + 1, y);
-        if (direction == WEST) coordinate = new Coordinate(x - 1, y);
-        if (direction == SOUTH) coordinate = new Coordinate(x, y - 1);
+        switch(direction) {
+            case N:
+                posY += 1;
+                break;
+            case S:
+                posY -= 1;
+                break;
+            case E:
+                posX += 1;
+                break;
+            case W:
+                posX -= 1;
+                break;
+            default:
+                direction = null;
+        }
     }
 
-}
+    public int getXPosition() {
+        return posX;
+    }
 
-//switch(direction){
-//        case NORTH: posY += 1; break;
-//        case SOUTH: posY -= 1; break;
-//        case EAST: posX += 1; break;
-//        case WEST: posX -= 1; break;
-//default: direction = null;
-//        }
+    public int getYPosition() {
+        return posY;
+    }
+
+    public String getDirection() {
+        return String.valueOf(direction);
+    }
+}

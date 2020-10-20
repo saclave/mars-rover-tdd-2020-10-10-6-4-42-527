@@ -11,7 +11,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_N_with_command_M() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "N");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
         //when
         marsRover.moveMarsRover("M");
         //then
@@ -23,7 +23,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_N_with_command_L(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "N");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
         //when
         marsRover.moveMarsRover("L");
         //then
@@ -35,7 +35,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_N_with_command_R(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "N");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
         //when
         marsRover.moveMarsRover("R");
         //then
@@ -47,7 +47,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_S_with_command_M(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "S");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
         //when
         marsRover.moveMarsRover("M");
         //then
@@ -60,7 +60,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_S_with_command_L(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "S");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
         //when
         marsRover.moveMarsRover("L");
         //then
@@ -72,7 +72,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_S_with_command_R(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "S");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.S);
         //when
         marsRover.moveMarsRover("R");
         //then
@@ -84,7 +84,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_E_with_command_M(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "E");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
         //when
         marsRover.moveMarsRover("M");
         //then
@@ -96,7 +96,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_E_with_command_L(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "E");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
         //when
         marsRover.moveMarsRover("L");
         //then
@@ -108,7 +108,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_E_with_command_R(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "E");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.E);
         //when
         marsRover.moveMarsRover("R");
         //then
@@ -120,7 +120,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_W_with_command_M(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "W");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
         //when
         marsRover.moveMarsRover("M");
         //then
@@ -132,7 +132,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_W_with_command_L(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "W");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
         //when
         marsRover.moveMarsRover("L");
         //then
@@ -144,7 +144,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_W_with_command_R(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "W");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.W);
         //when
         marsRover.moveMarsRover("R");
         //then
@@ -156,7 +156,7 @@ public class DemoTest {
     @Test
     void test_when_x0_y0_heading_N_with_multiple_commands(){
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "N");
+        MarsRover marsRover = new MarsRover(0, 0, Direction.N);
         //when
         marsRover.moveMarsRover("MLMR");
         //then
@@ -170,7 +170,7 @@ public class DemoTest {
         //then
         assertThrows(CommandNotDefinedException.class, () -> {
             //given
-            MarsRover marsRover = new MarsRover(0, 0, "N");
+            MarsRover marsRover = new MarsRover(0, 0, Direction.N);
             //when
             marsRover.sortRoverMovement("F");
         });

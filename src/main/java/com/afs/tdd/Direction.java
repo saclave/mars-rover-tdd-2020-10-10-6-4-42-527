@@ -1,51 +1,51 @@
 package com.afs.tdd;
 
 public enum Direction {
-    NORTH{
+    N{
         @Override
         Direction rotateLeft(){
-            return WEST;
+            return W;
         }
 
         @Override
         Direction rotateRight(){
-            return EAST;
+            return E;
         }
     },
 
-    SOUTH {
+    S {
         @Override
         Direction rotateLeft() {
-            return EAST;
+            return E;
         }
 
         @Override
         Direction rotateRight() {
-            return WEST;
+            return W;
         }
     },
 
-    EAST {
+    E {
         @Override
         Direction rotateLeft() {
-            return NORTH;
+            return N;
         }
 
         @Override
         Direction rotateRight() {
-            return SOUTH;
+            return S;
         }
     },
 
-    WEST {
+    W {
         @Override
         Direction rotateLeft() {
-            return SOUTH;
+            return S;
         }
 
         @Override
         Direction rotateRight() {
-            return NORTH;
+            return N;
         }
     };
 
